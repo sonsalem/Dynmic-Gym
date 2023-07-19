@@ -7,5 +7,6 @@
 - Dark Mood And Light Mood
 - Local Strorge For All Buttons
 - Hide Or Show Products
+- Custom Cursor
 
 **Have fun building!** 🚀

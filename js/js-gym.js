@@ -1,5 +1,24 @@
 'use strict'
 
+// Cursor
+
+let cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', function (e) {
+  cursor.style.cssText = `top:${e.pageY-scrollY-5}px; left:${e.pageX-scrollX-5}px`
+})
+
+let pointer = document.querySelectorAll('.pointer');
+
+pointer.forEach(function(el) {
+  el.addEventListener('mouseenter', function() {
+    cursor.classList.add('scale');
+  })
+  el.addEventListener('mouseleave', function() {
+    cursor.classList.remove('scale');
+  })
+})
+
 // Loading
 
 let load = document.querySelector('.loading');
@@ -203,7 +222,7 @@ if (document.querySelector('.carousel-content') != undefined) {
   // Set Gap For Ul
   ul.style.gap = `${gap}px`;
   let styleElementsCarousel = () => {
-    let styelItem = 'width: 250px; border-radius: 6px; opacity: .7; height: 250px; cursor: pointer; position: relative; transition: .3s; opacity: .1;'
+    let styelItem = 'width: 250px; border-radius: 6px; opacity: .7; height: 250px; position: relative; transition: .3s; opacity: .1;'
     allLis.forEach(el => el.style = `${styelItem}`);
     if (allLis[activeLi] != undefined) {
       allLis[activeLi].style.cssText = `${styelItem}  opacity: 1 !important; scale: 1.5 !important; z-index: 1000;`

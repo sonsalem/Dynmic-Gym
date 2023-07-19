@@ -46,9 +46,6 @@
 .mix-diffrence {
   mix-blend-mode: difference;
 }
-.pointer {
-  cursor: pointer;
-}
 .t-duration {
   transition: var(--main-duration);
   -webkit-transition: var(--main-duration);
@@ -101,7 +98,6 @@
   padding: 10px 10px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  cursor: pointer;
   transition: var(--main-duration);
   border-color: var(--main-color);
   font-weight: bold;
@@ -155,7 +151,7 @@ body {
   font-family: 'Baloo Paaji', cursive;
   background-color: var(--bg-body);
   color: var(--c-csutom);
-  min-height: 200vh;
+  cursor: none;
 }
 body.hide {
   overflow: hidden !important;
@@ -171,6 +167,7 @@ a {
   width: fit-content;
   color: var(--c-color);
   transition: var(--main-duration);
+  cursor: none !important;
 }
 a:hover {
   color: inherit;
@@ -251,6 +248,23 @@ input:focus {
   }
 }
 /* End Loading */
+/* Start Cursor */
+.cursor {
+  width: 10px;
+  pointer-events: none;
+  z-index:10000000000000000;
+  height: 10px;
+  background-color: var(--main-color);
+  transition: .1s;
+  -webkit-transition: .1s;
+  animation: scaleCur .8s ease-in-out infinite alternate;
+  -webkit-animation: scaleCur .8s ease-in-out infinite alternate;
+}
+.cursor.scale {
+  background-color: #ff000050;
+  scale: 7;
+}
+/* End Cursor */
 /* Start Nav Bar */
 .navbar-toggler:focus {
   box-shadow: unset !important;
@@ -548,6 +562,14 @@ footer>p {
 }
 /* Scroll To Top */
 /* Animations */
+/* @keyframes scaleCur {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.6;
+  }
+} */
 @keyframes showTop {
   0% {
     translate: 0 -100%;
